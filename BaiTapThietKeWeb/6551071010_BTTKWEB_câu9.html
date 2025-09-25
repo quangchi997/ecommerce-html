@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Đăng ký du lịch</title>
+    <style>
+      body {
+        font-family: Arial;
+        background-color: #f5f5f5;
+      }
+      .form-container {
+        width: 600px;
+        margin: 30px auto;
+        background-color: #ffffcc;
+        padding: 20px;
+        border: 1px solid #999;
+      }
+      h2 {
+        text-align: center;
+        color: #0066cc;
+      }
+      table {
+        width: 100%;
+      }
+      td {
+        padding: 6px;
+        vertical-align: top;
+      }
+      input[type="text"],
+      input[type="number"],
+      select {
+        width: 98%;
+        padding: 5px;
+        box-sizing: border-box;
+      }
+      .checkbox,
+      .radio {
+        margin-right: 10px;
+      }
+      .highlight {
+        background-color: #fff2cc;
+        padding: 8px;
+        border: 1px solid #cc9900;
+        margin-bottom: 10px;
+      }
+      .highlight label {
+        color: brown;
+        font-weight: bold;
+      }
+      .submit-btn {
+        text-align: center;
+      }
+      .submit-btn button {
+        padding: 6px 20px;
+        background-color: #999999;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+      .submit-btn button:hover {
+        background-color: #666666;
+      }
+      .success-message {
+        text-align: center;
+        color: orange;
+        font-weight: bold;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-container">
+      <h2>Đăng ký du lịch</h2>
+      <form id="travelForm" onsubmit="return submitForm();">
+        <table>
+          <tr>
+            <td>Họ và tên</td>
+            <td><input type="text" id="name" required /></td>
+          </tr>
+          <tr>
+            <td>Địa chỉ</td>
+            <td><input type="text" id="address" required /></td>
+          </tr>
+          <tr>
+            <td>Điện thoại</td>
+            <td><input type="text" id="phone" required /></td>
+          </tr>
+          <tr>
+            <td>Khách Việt Nam</td>
+            <td><input type="checkbox" id="isVietnamese" /></td>
+          </tr>
+          <tr>
+            <td>Chọn tour</td>
+            <td>
+              <select id="tour">
+                <option value="Buôn mê thuột - Gia lai - Kontum">
+                  Buôn mê thuột - Gia lai - Kontum
+                </option>
+                <option value="Nha Trang - Đà Lạt">Nha Trang - Đà Lạt</option>
+                <option value="Huế - Đà Nẵng">Huế - Đà Nẵng</option>
+                <option value="Sa Pa - Lào Cai">Sa Pa - Lào Cai</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>Phương tiện</td>
+            <td>
+              <input type="radio" name="vehicle" value="Máy bay" required /> Máy
+              bay <input type="radio" name="vehicle" value="Xe ô tô" /> Xe ô tô
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <div class="highlight">
+                <label>Số lượng đoàn khách</label><br />
+                Người lớn
+                <input
+                  type="number"
+                  id="adults"
+                  min="0"
+                  value="0"
+                  required
+                  style="width: 60px"
+                />
+                Trẻ em
+                <input
+                  type="number"
+                  id="children"
+                  min="0"
+                  value="0"
+                  required
+                  style="width: 60px"
+                />
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Ghi chú thêm</td>
+            <td>
+              <select id="note">
+                <option value="">-- Chọn ghi chú --</option>
+                <option value="Có 2 trẻ em dưới 6 tuổi">
+                  Có 2 trẻ em dưới 6 tuổi
+                </option>
+                <option value="Có 2 người ăn chay">Có 2 người ăn chay</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2" class="submit-btn">
+              <button type="submit">Đồng ý</button>
+            </td>
+          </tr>
+        </table>
+      </form>
+      <div id="successMessage" class="success-message"></div>
+    </div>
+
+    <script>
+      function submitForm() {
+        let name = document.getElementById("name").value.trim();
+        let address = document.getElementById("address").value.trim();
+        let phone = document.getElementById("phone").value.trim();
+        let adults = document.getElementById("adults").value;
+        let children = document.getElementById("children").value;
+        let vehicle = document.querySelector('input[name="vehicle"]:checked');
+
+        if (
+          !name ||
+          !address ||
+          !phone ||
+          !vehicle ||
+          adults === "" ||
+          children === ""
+        ) {
+          alert("Vui lòng điền đầy đủ thông tin!");
+          return false;
+        }
+
+        document.getElementById("successMessage").innerText =
+          "Bạn đã đăng ký thành công!!!";
+        return false;
+      }
+    </script>
+  </body>
+</html>

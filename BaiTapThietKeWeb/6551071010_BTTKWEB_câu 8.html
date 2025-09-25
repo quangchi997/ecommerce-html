@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Phiếu đăng ký tham gia chương trình khuyến mãi</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #eef;
+      }
+      .form-container {
+        width: 600px;
+        margin: 40px auto;
+        background-color: #e0f2e9;
+        padding: 20px;
+        border: 1px solid #ccc;
+      }
+      table {
+        width: 100%;
+      }
+      td {
+        padding: 8px;
+      }
+      input[type="text"],
+      input[type="tel"],
+      input[type="number"],
+      select {
+        width: 100%;
+        padding: 5px;
+        box-sizing: border-box;
+      }
+      .success-message {
+        color: red;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 10px;
+      }
+      .submit-btn {
+        padding: 8px 16px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+      .submit-btn:hover {
+        background-color: #45a049;
+      }
+      h2 {
+        text-align: center;
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-container">
+      <h2>Phiếu đăng ký tham gia chương trình khuyến mãi</h2>
+      <form id="registerForm" onsubmit="return checkForm();">
+        <table>
+          <tr>
+            <td>Họ và tên</td>
+            <td><input type="text" id="name" required /></td>
+          </tr>
+          <tr>
+            <td>Địa chỉ</td>
+            <td><input type="text" id="address" required /></td>
+          </tr>
+          <tr>
+            <td>Điện thoại</td>
+            <td><input type="tel" id="phone" required /></td>
+          </tr>
+          <tr>
+            <td>Phái</td>
+            <td>
+              <input type="radio" name="gender" value="Nam" required /> Nam
+              <input type="radio" name="gender" value="Nữ" /> Nữ
+            </td>
+          </tr>
+          <tr>
+            <td>Nghề nghiệp</td>
+            <td>
+              <select id="occupation" required>
+                <option value="">-- Chọn nghề nghiệp --</option>
+                <option value="Giáo viên">Giáo viên</option>
+                <option value="Sinh viên">Sinh viên</option>
+                <option value="Kỹ sư">Kỹ sư</option>
+                <option value="Khác">Khác</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>Chọn sản phẩm tham gia</td>
+            <td>
+              <select id="product" size="4" required>
+                <option value="Kem đánh răng">Kem đánh răng</option>
+              </select>
+            </td>
+          </tr>
+        </table>
+      </form>
+    </div>
+  </body>
+</html>

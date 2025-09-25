@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Bài Tập 4</title>
+    <style>
+      h2 {
+        color: red;
+        text-align: center;
+      }
+
+      /* Chỉ đổi màu số I, II */
+      ol[type="I"] > li {
+        color: blue;
+      }
+
+      /* Reset màu cho danh sách con */
+      ol[type="I"] > li > ol {
+        color: black;
+      }
+
+      /* Chữ bên trong span vẫn đỏ */
+      .red {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>CHƯƠNG TRÌNH ĐÀO TẠO THIẾT KẾ WEBSITE</h2>
+
+    <ol type="I">
+      <li>
+        <span class="red">Thiết Kế Website</span>
+        <ol style="color: blue">
+          <li>Ngôn ngữ HTML</li>
+          <li>Xử lý ảnh bằng Photoshop</li>
+          <li>Thiết kế ảnh động bằng Flash</li>
+          <li>CSS (Cascading Style Sheets)</li>
+          <li>Thiết kế web với Dreamweaver</li>
+          <li>Ngôn ngữ kịch bản Javascript</li>
+        </ol>
+      </li>
+
+      <li>
+        <span class="red">Lập Trình Website</span>
+        <ol style="color: blue">
+          <li>Phân tích và thiết kế CSDL</li>
+          <li>Lập trình với ASP.NET</li>
+          <li>Quản trị website</li>
+        </ol>
+      </li>
+    </ol>
+
+    <p style="color: blue">Mọi chi tiết xin liên hệ: 0293.888.999</p>
+  </body>
+</html>
